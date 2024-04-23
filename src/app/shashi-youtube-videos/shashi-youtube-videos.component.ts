@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import videoIdsData from './links.json';
+import videoIds from './links.json';
 
 
 
@@ -11,11 +11,17 @@ import videoIdsData from './links.json';
 })
 export class ShashiYoutubeVideosComponent implements OnInit {
 
+  embeddedUrlList: any[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log('video Ids', videoIdsData);
-    console.log('in init')
+    console.log('video Ids', videoIds);
+    videoIds.forEach((element:any) => {
+      let url = 'https://www.youtube.com/embed/'+element+'?mute=1';
+      this.embeddedUrlList = [...this.embeddedUrlList, url];
+    });
+    console.log('embeddedUrlList', this.embeddedUrlList);
   }
 
 }
