@@ -1,7 +1,15 @@
+<div style="display: flex; margin-bottom: 15px;">
+    <label for="fname">Video Id:</label>
+    <input matInput type="text" [(ngModel)]="value"><br><br>
+    <input type="submit" value="Submit" (click)="submit()" style="margin-left: 10px;">
+</div>
+<div>
+</div>
+
 <div class="food-item" *ngFor="let url of embeddedUrlList;let i = index;">
     <div class="card-img-top center">
-        <iframe width="300" height="240" [src]="url | safe" scrolling="no"
-            frameborder="0" allowfullscreen="true"></iframe>
+        <iframe width="300" height="240" [src]="url | safe" scrolling="no" frameborder="0"
+            allowfullscreen="true"></iframe>
         <div>
         </div>
     </div>
